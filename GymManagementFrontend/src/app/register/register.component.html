@@ -1,0 +1,54 @@
+<div class="main">
+  <div class="register-grids">
+    <div class="container">
+      <form (ngSubmit)="createCustomer()" #registerForm="ngForm">
+        <div class="register-top-grid">
+          <h3>PERSONAL INFORMATION</h3>
+          <div>
+            <span>First Name <label [style.visibility]="(fname.valid || fname.pristine)?'hidden':''">*Required</label></span>
+            <input type="text" [(ngModel)]="customer.firstName" name="firstName" #fname="ngModel" required>
+          </div>
+          <div>
+            <span>Last Name <label [style.visibility]="(lname.valid || lname.pristine)?'hidden':''">*Required</label></span>
+            <input type="text" [(ngModel)]="customer.lastName" name="lastName" #lname="ngModel" required>
+          </div>
+          <div>
+            <span>Email Address <label [style.visibility]="(email.valid || email.pristine)?'hidden':''">*Required</label></span>
+            <input type="email" [(ngModel)]="customer.email" name="email" #email="ngModel" required>
+          </div>
+          <div>
+            <span>Address <label [style.visibility]="(address.valid || address.pristine)?'hidden':''">*Required</label></span>
+            <input type="text" [(ngModel)]="customer.address" name="address" #address="ngModel" required>
+          </div>
+          <div>
+            <span>Date Of Birth <label [style.visibility]="(dob.valid || dob.pristine)?'hidden':''">*Required</label></span>
+            <input type="date" [(ngModel)]="customer.dob" name="dob" #dob="ngModel" required>
+          </div>
+          <div>
+            <span>Phone <label [style.visibility]="(phone.valid || phone.pristine)?'hidden':''">*Required</label></span>
+            <input type="text" [(ngModel)]="customer.phone" name="phone" #phone="ngModel" required>
+          </div>
+        </div>
+        <div class="clear"> </div>
+        <div class="register-bottom-grid">
+          <h3>LOGIN INFORMATION</h3>
+          <div>
+            <span>Password <label [style.visibility]="(pass.valid || pass.pristine)?'hidden':''">*Required</label></span>
+            <input type="password" [(ngModel)]="customer.password" name="password" #pass="ngModel" required>
+          </div>
+          <div>
+            <span>Confirm Password <label [style.visibility]="(cpass.valid || cpass.pristine)?'hidden':''">*Required</label></span>
+            <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" #cpass="ngModel" required>
+          </div>
+          <div class="clear"> </div>
+        </div>
+        <div class="clear"> </div>
+        <div>
+          <input type="submit" value="submit" [disabled]="!registerForm.form.valid"><label [style.visibility]="(registerForm.form.valid)?'hidden':''">&nbsp;&nbsp; *Fill form to proceed</label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<app-footer></app-footer>

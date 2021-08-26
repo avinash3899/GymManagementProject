@@ -1,0 +1,13 @@
+.uname{
+    float: right;
+    color: white;
+    font-size:x-large;
+}
+.logo{
+	float:left;
+}
+@media screen and (max-width: 768px) {
+	.logo{
+		text-align:center;
+	}
+}

@@ -1,0 +1,4 @@
+.remember input[type="submit"]:disabled{
+	background-color: gray;
+	opacity: 0.3;
+}

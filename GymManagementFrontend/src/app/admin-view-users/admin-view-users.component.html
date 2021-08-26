@@ -1,0 +1,51 @@
+<div class="main">
+    <div class="about_banner_img"><img src="images/price.jpg" class="img-responsive" alt="" /></div>
+    <div class="about_banner_wrap">
+        <h1 class="m_11">Customers List</h1>
+    </div>
+    <div class="border"> </div>
+    <br>
+
+    <hr>
+    <div class="container table-responsive" style="background-color: rgb(141, 200, 228);">
+        <h2>Customer List</h2>
+        <hr>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">S.no</th>
+                    <th scope="col">FirstNamer</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Subscription</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customer">
+                    <th scope="row">{{customer.id}}</th>
+                    <td>{{customer.firstName}}</td>
+                    <td>{{customer.lastName}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>{{customer.address}}</td>
+                    <td>{{customer.dob}}</td>
+                    <td>{{customer.subscription}}</td>
+                    <td>{{customer.phone}}</td>
+
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteOneCustomer(customer.id,customer.email)">DELETE</button>
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="clear"></div>
+<br>
+<app-footer></app-footer>

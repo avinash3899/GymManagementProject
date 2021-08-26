@@ -1,0 +1,49 @@
+<div class="main">
+  <div class="about_banner_img"><img src="images/price.jpg" class="img-responsive" alt="" /></div>
+  <div class="about_banner_wrap">
+    <h1 class="m_11">Messages</h1>
+  </div>
+  <div class="border"> </div>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="container" style="text-align:center; padding: 100px; font-size: xx-large;" *ngIf="contact==null">
+      No Messages
+    </div>
+    <div class="container table-responsive" style="background-color: rgb(141, 200, 228);" *ngIf="contact!=null">
+      <h2>Messages</h2>
+      <hr>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">M.ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Message</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contact">
+            <th scope="row">{{contact.id}}</th>
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.messageType}}</td>
+            <td>{{contact.message}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteOneMessage(contact.id)">DELETE</button>
+            </td>
+
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<br>
+<app-footer></app-footer>

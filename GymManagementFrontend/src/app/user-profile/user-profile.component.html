@@ -1,0 +1,111 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+<div class="main">
+    <div class="container profile-container">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="profile-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                        alt="" />
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" name="file" />
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a data-toggle="pill" href="#about">ABOUT</a></li>
+                    <li><a data-toggle="pill" href="#menu1">PASSWORD SETTINGS</a></li>
+                    <li><a data-toggle="pill" href="#menu3">UPDATE SUBSCRIPTION</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content" style="padding: 20px;">
+                <div id="about" class="tab-pane fade in active">
+                    <div class="row" style="margin-bottom: 50px;">
+                        <div class="col-md-12">
+                            <h1>{{customerProfile.firstName+" "+customerProfile.lastName }}</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>User Id</label>
+                        </div>
+                        <div class="col-md-5">
+                            <p>{{customerProfile.id}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-md-5">
+                            <p>{{customerProfile.email}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>Phone</label>
+                        </div>
+                        <div class="col-md-5">
+                            <p>{{customerProfile.phone}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <label>Plan</label>
+                        </div>
+                        <div class="col-md-5">
+                            <p>{{customerProfile.subscription}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <div class="row" style="">
+                        <div class="col-md-12">
+                            <h3>Update Password</h3><br><br>
+                        </div>
+                    </div>
+
+                    <div class="row" style="">
+                        <div class="col-md-12">
+                            <form (ngSubmit)="changePassword()">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <label>New Password</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="password" [(ngModel)]="customerProfile.password" name="password">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-5">
+                                        <label>Confirm Password</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="password" [(ngModel)]="cpassword" name="cpassword">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-12">
+                                        <input type=submit value=Confirm>&nbsp;&nbsp;
+                                        <input type="reset" value=Cancel>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                    <h3>Menu 3</h3>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                        explicabo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

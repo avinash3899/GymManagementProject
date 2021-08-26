@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+	.view>img{
+        width: 100%;
+    }
+    .mask{
+        width: 40%;
+        margin-left:75px;
+        margin-top: 30px;
+    }
+}

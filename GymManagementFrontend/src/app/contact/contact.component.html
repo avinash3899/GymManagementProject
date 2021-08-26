@@ -1,0 +1,56 @@
+<div class="main">
+    <iframe width="100%" height="420" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23456.784178475747!2d77.59666291004626!3d12.97386866000382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x62a7e12a41f8816c!2sGold&#39;s%20Gym!5e0!3m2!1sen!2sin!4v1629527188684!5m2!1sen!2sin"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"> </iframe><br /><small><a
+            href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=United+Kingdom&amp;aq=0&amp;oq=un&amp;sll=37.0625,-95.677068&amp;sspn=48.956293,107.138672&amp;ie=UTF8&amp;hq=&amp;hnear=United+Kingdom&amp;ll=55.378051,-3.435973&amp;spn=135.795411,68.554687&amp;t=m&amp;z=2"
+            style="color:#666;font-size:12px;text-align:left"> </a></small>
+    <div class="about_banner_wrap">
+        <h1 class="m_11">Contact Us</h1>
+    </div>
+    <div class="border"> </div>
+    <div class="rwo contact">
+        <div class="container">
+            <div class="col-md-8 contact-top">
+                <h3>Send us a message</h3>
+                <p class="contact_msg">Please fill in the details to get in touch with us.</p>
+                <form (ngSubmit)="sendMessage()" autocomplete="off">
+                    <div class="to">
+                        <input type="text" [(ngModel)]="contact.name" name="name" class="text" value="Name" onfocus="this.value = '';"
+                            onblur="if (this.value == '') {this.value = 'Name';}">
+                        <input type="text" [(ngModel)]="contact.email" name="email" class="text" value="Email" onfocus="this.value = '';"
+                            onblur="if (this.value == '') {this.value = 'Email';}">
+                        <select [(ngModel)]="contact.messageType" name="subject">
+                            <option selected disabled>Subject</option>
+                            <option value="Query">Query</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Feedback">Feedback</option>
+                        </select>
+                    </div>
+                    <div class="text">
+                        <textarea [(ngModel)]="contact.message" name="message" value="Message:" onfocus="this.value = '';"
+                            onblur="if (this.value == '') {this.value = 'Message';}" style="margin-top:10px">Message:
+                        </textarea>
+                    </div>
+                    <div class="form-submit1">
+                        <input name="submit" type="submit" value="Submit Your Message" background colour='red'><br>
+                        <p class="m_msg">Make sure you put a valid email</p>
+                    </div>
+                    <div class="clear"></div>
+                </form>
+            </div>
+            <div class="col-md-4 contact-top_right">
+                <h3>Contact Info</h3>
+                <p>We are a chain of high quality gyms located across the globe. We thrive to provide the best possible
+                    experience for each and every customer. In case you have any query or you want to reach out to us,
+                    please contact us on the following numbers or give us a feedback in the area provided.</p>
+                <ul class="contact_info">
+                    <li><i class="mobile"> </i><span>+91-9657438763</span></li>
+                    <li><i class="message"> </i><span class="msg">info@gym.com</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<app-footer></app-footer>

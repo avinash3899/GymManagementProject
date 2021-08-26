@@ -1,0 +1,56 @@
+<div class="main">
+	<div class="login_top">
+		<div class="container">
+			<div class="col-md-6">
+				<div class="login-page">
+					<h4 class="title">New Customers</h4>
+					<p>“Get enough exercise and sleep: Sounds trivial, but it’s not. You may have the urge to work 24/7,
+						to skip the gym and to stay up late to get a few more things done. That’s short-sighted.
+						Exercise and sleep are critical to having the physical and mental energy necessary to meet a
+						challenge.” – Gretchen Rubin
+
+					</p>
+					<div class="button1">
+						<a routerLink="../register"><input type="submit" name="Submit" value="Create an Account"></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="login-page">
+					<div class="login-title">
+						<h4 class="title">Registered Customers</h4>
+						<div id="loginbox" class="loginbox">
+							<form (ngSubmit)="loginvalidate()" #loginForm="ngForm">
+								<fieldset class="input">
+									<p id="login-form-username">
+										<label for="modlgn_username">Email</label>
+										<input id="modlgn_username" [(ngModel)]="email" type="text" name="email" class="inputbox" size="18"
+											autocomplete="off" required>
+									</p>
+									<p id="login-form-password">
+										<label for="modlgn_passwd">Password</label>
+										<input id="modlgn_passwd" [(ngModel)]="password" type="password" name="password" class="inputbox"
+											size="18" autocomplete="off" required>
+									</p>
+									<div *ngIf="errorMessage" class="alert alert-danger">
+										<strong>{{errorMessage}}</strong>
+									  </div>
+									<div class="remember">
+										<p id="login-form-remember">
+											<label for="modlgn_remember"><a routerLink="../forgotpassword">Forget Your Password ? </a></label>
+										</p>
+										<input type="submit" name="Submit" [disabled]="!loginForm.form.valid" class="button" value="Login">
+										<div class="clear"></div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<app-footer></app-footer>
